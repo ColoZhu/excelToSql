@@ -2,17 +2,17 @@ package com.utils;
 
 public interface Constant {
 
-    String pre = " create table {{tableName}} \n" +
+    String pre = " create table _tableName_ \n" +
             "(\n" +
-            "    {{itemContent}}  \n" +
-            ")"
-            + " create table DLB_SENDER\n" +
-            "(\n" +
-            "    {{itemContent}}  \n" +
+            "    _itemContent_  \n" +
             ")\n" +
             "/\n" +
             "\n" +
-            "comment on table {{tableName}} is '{{tableNameDesc}}'";
+            "comment on table _tableName_ is '_tableNameDesc_'" +
+            "/\n"+
+            "_annotationContent_";
+
+
 
     //oracle数据类型相关
     String NUMBER = "NUMBER";
