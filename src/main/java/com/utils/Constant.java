@@ -7,7 +7,6 @@ public interface Constant {
             "<<itemContent>>  \n" +
             ")\n" +
             "/\n" +
-            "\n" +
             "comment on table <<tableName>> is '<<tableNameDesc>>'" +
             "\n" +
             "/\n" +
