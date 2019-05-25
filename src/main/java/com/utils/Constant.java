@@ -2,16 +2,16 @@ package com.utils;
 
 public interface Constant {
 
-    String pre = " create table _tableName_ \n" +
+    String pre = " create table <<tableName>> \n" +
             "(\n" +
-            "    _itemContent_  \n" +
+            "<<itemContent>>  \n" +
             ")\n" +
             "/\n" +
             "\n" +
-            "comment on table _tableName_ is '_tableNameDesc_'" +
-            "/\n"+
-            "_annotationContent_";
-
+            "comment on table <<tableName>> is '<<tableNameDesc>>'" +
+            "\n" +
+            "/\n" +
+            "<<annotationContent>>";
 
 
     //oracle数据类型相关
@@ -19,5 +19,7 @@ public interface Constant {
     String VARCHAR2 = "VARCHAR2";
     String DATE = "DATE";
     String NOT_NULL = "not null";
+    String STRING_MAX_LENGTH = "256";//默认字符串最大位数
+    String ROW_PRE = "    ";//行开头缩进
 
 }

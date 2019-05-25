@@ -6,16 +6,7 @@ public class Excel {
     private String type;    //类型
     private String isNeed;  //是否必填
     private String annotation;  //注释
-
-    @Override
-    public String toString() {
-        return "Excel{" +
-                "item='" + item + '\'' +
-                ", type='" + type + '\'' +
-                ", isNeed='" + isNeed + '\'' +
-                ", annotation='" + annotation + '\'' +
-                '}';
-    }
+    private Integer maxLength;  //最大长度
 
     public String getItem() {
         return item;
@@ -47,5 +38,13 @@ public class Excel {
 
     public void setAnnotation(String annotation) {
         this.annotation = annotation;
+    }
+
+    public Integer getMaxLength() {
+        return maxLength;
+    }
+
+    public void setMaxLength(Integer maxLength) {
+        this.maxLength = maxLength;
     }
 }
