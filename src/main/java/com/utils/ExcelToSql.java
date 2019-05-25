@@ -46,8 +46,11 @@ public class ExcelToSql {
                     if (StringUtils.isBlank(item)) {
                         continue; //列不存在直接跳过
                     }
-                    //用于替换sql语句中的占位 字符串__
-                    String itemNew = item;
+
+                    String ITEM_LINE = ChangeChar.camelToUnderline(item, 2); //对应oracle数据库列名转大写下划线
+
+                    //用于替换sql语句中的占位 字符串<< >>
+                    String itemNew = ITEM_LINE;  //oracle大写
                     String annotationNew = annotation;
                     String typeNew = Constant.VARCHAR2;   //默认字符串类型
                     String isNeedNew = "";  //默认不必填
@@ -95,7 +98,7 @@ public class ExcelToSql {
                     String rowAnnotation = "\n" +
                             "comment on column <<tableName>>.<<ITEM_LINE>> is '<<annotation>>'\n" +
                             "/";
-                    String ITEM_LINE = ChangeChar.camelToUnderline(item, 2); //对应数据库列名转大写下划线
+
                     rowAnnotation = rowAnnotation.replaceAll("<<tableName>>", tableName).
                             replaceAll("<<ITEM_LINE>>", ITEM_LINE).
                             replaceAll("<<annotation>>", annotationNew)
