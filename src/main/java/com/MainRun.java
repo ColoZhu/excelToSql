@@ -11,6 +11,7 @@ public class MainRun {
          * 第二步:设置 下面的tableName, tableNameDesc,excelPath
          * 第三步:运行MainRun.java类下的main方法,控制台输出sqls
          * 注意格式:只测试过excel里面(驼峰字段)--->生成表列都是(下划线大写)
+         *
          */
 
 
