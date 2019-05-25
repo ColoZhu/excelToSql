@@ -10,15 +10,6 @@ import java.util.List;
 
 public class ExcelToSql {
 
-    public static void main(String[] args) throws Exception {
-
-        String tableName = "MY_USER";  //表名,必填
-        String tableNameDesc = "我的用户表";  //表名,可以为空
-        String excelPath = "D:\\code\\excelToSql\\src\\main\\resources\\Excel.xlsx"; //excel硬盘上路径
-        createSql(tableName, tableNameDesc, excelPath);
-
-    }
-
 
     /**
      * @param tableName
@@ -26,7 +17,7 @@ public class ExcelToSql {
      * @param excelPath
      * @throws Exception
      */
-    public static void createSql(String tableName, String tableNameDesc, String excelPath) throws Exception {
+    public static String createSql(String tableName, String tableNameDesc, String excelPath) throws Exception {
         //String tableName = "MY_USER";  //表名
         // String tableNameDesc = "我的用户表";  //表名描述
         // String excelPath = "D:\\code\\excelToSql\\src\\main\\resources\\Excel.xlsx";
@@ -64,7 +55,7 @@ public class ExcelToSql {
 
 
                     if (type.contains("int") || type.contains("Num") || type.contains("Int")
-                            || type.contains("数")|| type.contains("num")) {
+                            || type.contains("数") || type.contains("num")) {
                         typeNew = Constant.NUMBER;
                     } else if (type.contains("date") || type.contains("Date") || type.contains("日期")) {
                         typeNew = Constant.DATE;
@@ -127,6 +118,7 @@ public class ExcelToSql {
         System.out.println(sqlStr);
 
         System.out.println("-----------sql结束----------------------------------------------------------------");
+        return sqlStr;
     }
 
 }
