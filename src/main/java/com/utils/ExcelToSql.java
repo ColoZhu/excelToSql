@@ -42,7 +42,7 @@ public class ExcelToSql {
                     String annotation = vo.getAnnotation();
                     String type = vo.getType(); //数据类型
                     String isNeed = vo.getIsNeed(); //是否必填
-                    Integer maxLength = vo.getMaxLength(); //最大长度
+                    String maxLength = vo.getMaxLength(); //最大长度
                     if (StringUtils.isBlank(item)) {
                         continue; //列不存在直接跳过
                     }
@@ -67,17 +67,18 @@ public class ExcelToSql {
                     if (isNeed.contains("是") || isNeed.contains("true") || isNeed.contains("True")) {
                         isNeedNew = Constant.NOT_NULL;
                     }
-                    if (isNeed.contains("是") || isNeed.contains("true") || isNeed.contains("True")) {
-                        isNeedNew = Constant.NOT_NULL;
-                    }
+
 
                     //如果是字符串类型没有指定长度,默认256
-                    if (maxLength == null || maxLength < 0) {
+                    Integer maxLengthInt = Integer.parseInt(maxLength);
+
+                    // if (maxLength == null || maxLength < 0) {
+                    if (maxLengthInt == null || maxLengthInt < 0) {
                         if (typeNew.equals(Constant.VARCHAR2)) {
                             maxLengthNew = "(" + Constant.STRING_MAX_LENGTH + ")";
                         }
                     } else {
-                        maxLengthNew = "(" + maxLength + ")";  //有值直接赋值
+                        maxLengthNew = "(" + maxLengthInt + ")";  //有值直接赋值
                     }
                     //默认值问题???
 

@@ -6,7 +6,7 @@ public class Excel {
     private String type;    //类型
     private String isNeed;  //是否必填
     private String annotation;  //注释
-    private Integer maxLength;  //最大长度
+    private String maxLength;  //最大长度
 
     public String getItem() {
         return item;
@@ -40,11 +40,11 @@ public class Excel {
         this.annotation = annotation;
     }
 
-    public Integer getMaxLength() {
+    public String getMaxLength() {
         return maxLength;
     }
 
-    public void setMaxLength(Integer maxLength) {
+    public void setMaxLength(String maxLength) {
         this.maxLength = maxLength;
     }
 }

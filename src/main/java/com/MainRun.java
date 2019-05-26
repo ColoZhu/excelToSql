@@ -15,8 +15,10 @@ public class MainRun {
          */
 
 
-        String tableName = "MY_USER";  //表名,必填
-        String tableNameDesc = "我的用户表";  //表名,可以为空
+        String tableName = "PURCHASE_ORDER_HEADER";  //表名,必填
+        //String tableName = "PURCHASE_ORDER_DETAIL";  //表名,必填
+        String tableNameDesc = "带萝卜-采购订单头表";  //表名,可以为空
+        //String tableNameDesc = "带萝卜-采购订单头明细表";  //表名,可以为空
         String excelPath = "D:\\code\\excelToSql\\src\\main\\resources\\Excel.xlsx"; //excel硬盘上路径
         String sql = ExcelToSql.createSql(tableName, tableNameDesc, excelPath);
 
