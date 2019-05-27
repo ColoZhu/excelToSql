@@ -70,15 +70,14 @@ public class ExcelToSql {
 
 
                     //如果是字符串类型没有指定长度,默认256
-                    Integer maxLengthInt = Integer.parseInt(maxLength);
-
-                    // if (maxLength == null || maxLength < 0) {
-                    if (maxLengthInt == null || maxLengthInt < 0) {
+                    //Integer maxLengthInt = Integer.parseInt(maxLength);
+                    if (StringUtils.isBlank(maxLength)) {
+                        //if (maxLengthInt == null || maxLengthInt < 0) {
                         if (typeNew.equals(Constant.VARCHAR2)) {
                             maxLengthNew = "(" + Constant.STRING_MAX_LENGTH + ")";
                         }
                     } else {
-                        maxLengthNew = "(" + maxLengthInt + ")";  //有值直接赋值
+                        maxLengthNew = "(" + maxLength + ")";  //有值直接赋值
                     }
                     //默认值问题???
 
